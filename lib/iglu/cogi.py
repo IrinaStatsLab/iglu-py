@@ -1,0 +1,2 @@
+def cogi():
+    pass
