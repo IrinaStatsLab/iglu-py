@@ -6,7 +6,7 @@ DESCRIPTION = 'Python version of R package `iglu`. Wraps the R functions, making
 # Setting up
 setup(
        # the name must match the folder name 'verysimplemodule'
-        name='iglu_py', 
+        name='iglu', 
         version=VERSION,
         author='Nathaniel J. Fernandes; Irina Gaynanova',
         author_email='njfernandes24@tamu.edu; irinag@umich.edu',
