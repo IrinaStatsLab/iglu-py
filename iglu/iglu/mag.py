@@ -1,2 +1,0 @@
-def mag():
-    pass

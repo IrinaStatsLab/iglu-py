@@ -1,2 +1,0 @@
-def mage():
-    pass
