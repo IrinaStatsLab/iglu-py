@@ -1,17 +1,16 @@
 from setuptools import setup, find_packages
 
 VERSION = '0.0.0' 
-DESCRIPTION = 'Python version of R package `iglu`. Wraps the R functions, making them accessible in Python.'
+DESCRIPTION = 'Python wrapper of R package `iglu`. Wraps the R functions, making them accessible in Python.'
 
 # Setting up
 setup(
-       # the name must match the folder name 'verysimplemodule'
-        name='iglu', 
+        name='iglu', # name must match the folder name where code lives
         version=VERSION,
-        author='Nathaniel J. Fernandes; Irina Gaynanova',
-        author_email='njfernandes24@tamu.edu; irinag@umich.edu',
+        author='Lizzie Chun, Nathaniel J. Fernandes, Irina Gaynanova', # TODO: proper acknowledgement
+        author_email='lizzie_chun1@tamu.edu, njfernandes24@tamu.edu, irinagn@umich.edu', 
         description=DESCRIPTION,
         packages=find_packages(),
-        install_requires=['rpy2', 'pandas'],        
+        install_requires=['rpy2==3.5.13', 'pandas==2.1.2', 'python-dotenv==1.0.0'], # we've validated functionality with these package versions.     
         keywords=['iglu', 'wrapper'],
 )

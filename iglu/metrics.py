@@ -1,11 +1,10 @@
 import pandas as pd
-from .bridge import df_conversion, iglu_r # iglu 3.4.2
+from .bridge import df_conversion, iglu_r
 
 @df_conversion
 def above_percent(data: list|pd.DataFrame, **kwargs) -> pd.DataFrame:
     ''' @param targets_above = list[float]
     '''
-
     return iglu_r.above_percent(data, **kwargs)
 
 @df_conversion
@@ -132,14 +131,6 @@ def iqr_glu(data: list|pd.DataFrame):
 def j_index(data: list|pd.DataFrame):
     return iglu_r.j_index(data)
 
-@df_conversion # TODO: FIXME:
-def plot_lasagna_1subject(data: list|pd.DataFrame, **kwargs):
-    return iglu_r.plot_lasagna_1subject(data, **kwargs)
-
-@df_conversion
-def plot_lasagna(data: list|pd.DataFrame, **kwargs):
-    return iglu_r.plot_lasagna(data, **kwargs)
-
 @df_conversion
 def lbgi(data: list|pd.DataFrame, **kwargs):
     return iglu_r.lbgi(data, **kwargs)
@@ -160,11 +151,11 @@ def mag(data: list|pd.DataFrame, **kwargs):
 def mage(data: list|pd.DataFrame, **kwargs):
     return iglu_r.mage(data, **kwargs)
 
-@df_conversion # TODO: FIXME:
+@df_conversion
 def time_check(data: list|pd.DataFrame, name, tz):
     return iglu_r.time_check(data, name, tz)
 
-@df_conversion # TODO: FIXME:
+@df_conversion
 def adj_mtimes(data: list|pd.DataFrame, mealtime, dt0):
     return iglu_r.time_check(data, mealtime, dt0)
 
@@ -184,24 +175,49 @@ def metric_scatter(data: list|pd.DataFrame, **kwargs):
 def modd(data: list|pd.DataFrame, **kwargs):
     return iglu_r.modd(data, **kwargs)
 
-# TODO: # FIXME: meal_metrics_single
-# TODO: # FIXME: mage_ma_single
-# TODO: # FIXME: mage_ma
-# TODO: # FIXME: mage_sd
-# TODO: # FIXME: meal_metrics
-# TODO: # FIXME: optimized_iglu_functions
-# TODO: # FIXME: plot_agp
-# TODO: # FIXME: plot_daily
-# TODO: # FIXME: plot_ranges
-# TODO: # FIXME: plot_roc
-# TODO: # FIXME: process_data
-# TODO: # FIXME: quantile_glu
-# TODO: # FIXME: range_glu
-# TODO: # FIXME: read_raw_data
-# TODO: # FIXME: roc
-# TODO: # FIXME: sd_glu
-# TODO: # FIXME: sd_measures
-# TODO: # FIXME: sd_roc
-# TODO: # FIXME: summary_glu
-# TODO: # FIXME: utils-pipe
-# TODO: # FIXME: utils
+@df_conversion
+def meal_metrics_single(data: list|pd.DataFrame, **kwargs):
+    return iglu_r.meal_metrics_single(data, **kwargs)
+
+@df_conversion
+def meal_metrics(data: list|pd.DataFrame, **kwargs):
+    return iglu_r.meal_metrics(data, **kwargs)
+
+@df_conversion
+def optimized_iglu_functions(data: list|pd.DataFrame, **kwargs):
+    return iglu_r.optimized_iglu_functions(data, **kwargs)
+
+@df_conversion
+def process_data(data: list|pd.DataFrame, **kwargs):
+    return iglu_r.process_data(data, **kwargs)
+
+@df_conversion
+def quantile_glu(data: list|pd.DataFrame, **kwargs):
+    return iglu_r.quantile_glu(data, **kwargs)
+
+@df_conversion
+def range_glu(data: list|pd.DataFrame):
+    return range_glu(data)
+
+def read_raw_data(filename: str, **kwargs):
+    return iglu_r.read_raw_data(filename, **kwargs)
+
+@df_conversion
+def roc(data: list|pd.DataFrame, **kwargs):
+    return iglu_r.roc(data, **kwargs)
+
+@df_conversion
+def sd_glu(data: list|pd.DataFrame, **kwargs):
+    return iglu_r.sd_glu(data, **kwargs)
+
+@df_conversion
+def sd_measures(data: list|pd.DataFrame, **kwargs):
+    return iglu_r.sd_measures(data, **kwargs)
+
+@df_conversion
+def sd_roc(data: list|pd.DataFrame, **kwargs):
+    return sd_roc.sd_roc(data, **kwargs)
+
+@df_conversion
+def summary_glu(data: list|pd.DataFrame):
+    return iglu_r.summary_glu(data)
