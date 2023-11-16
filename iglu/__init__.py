@@ -1,3 +1,9 @@
+from .bridge import (
+    import_iglu,
+    install_iglu,
+    uninstall_iglu
+)
+
 from .metrics import (
     above_percent,
     active_percent,
@@ -31,8 +37,6 @@ from .metrics import (
     in_range_percent,
     iqr_glu,
     j_index,
-    plot_lasagna_1subject,
-    plot_lasagna,
     lbgi,
     m_value,
     mad_glu,
@@ -57,3 +61,11 @@ from .metrics import (
     sd_roc,
     summary_glu
 )
+
+from .df import (
+    example_data_1_subject,
+    example_data_5_subject,
+    example_meal
+)
+
+import_iglu()
