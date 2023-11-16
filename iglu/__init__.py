@@ -28,7 +28,7 @@ from .metrics import (
     gri,
     gvp,
     hbgi,
-    hist_roc,
+    hist_roc, # TODO: add to readme
     hyper_index,
     hypo_index,
     igc,
@@ -41,8 +41,8 @@ from .metrics import (
     mad_glu,
     mag,
     mage,
-    time_check,
-    adj_mtimes,
+    time_check, # TODO: add to readme
+    adj_mtimes, # TODO: add to readme
     mean_glu,
     median_glu,
     metric_scatter,
@@ -60,6 +60,8 @@ from .metrics import (
     sd_roc,
     summary_glu
 )
+
+# TODO: add PGS
 
 from .df import (
     example_data_1_subject,
