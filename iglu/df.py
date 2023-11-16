@@ -5,8 +5,10 @@ from pathlib import Path
 # 3rd party
 import pandas as pd
 
-parent_directory = Path(__file__).parents[1].absolute()
+parent_directory = Path(__file__).parent.absolute()
 data_directory = os.path.join(parent_directory, 'data/')
+
+print()
 
 filepath1 = os.path.join(data_directory, 'example_data_1_subject.csv')
 filepath2 = os.path.join(data_directory, 'example_data_5_subject.csv')

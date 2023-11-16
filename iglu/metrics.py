@@ -36,9 +36,9 @@ def auc(data: Tuple[list, pd.DataFrame], **kwargs):
 def below_percent(data: Tuple[list, pd.DataFrame], **kwargs):
     return bridge.iglu_r.below_percent(data, **kwargs)
 
-@bridge.df_conversion # TODO: FIXME:
-def calculate_sleep_wake(data: Tuple[list, pd.DataFrame], func, **kwargs):
-    return bridge.iglu_r.calculate_sleep_wake(data, func, **kwargs)
+# @bridge.df_conversion # TODO: FIXME: how can you pass a python function into R?
+# def calculate_sleep_wake(data: Tuple[list, pd.DataFrame], func, **kwargs):
+#     return bridge.iglu_r.calculate_sleep_wake(data, func, **kwargs)
 
 @bridge.df_conversion
 def cogi(data: Tuple[list, pd.DataFrame], **kwargs):
@@ -60,7 +60,7 @@ def cv_measures(data: Tuple[list, pd.DataFrame], **kwargs):
 def ea1c(data: Tuple[list, pd.DataFrame]):
     return bridge.iglu_r.ea1c(data)
 
-@bridge.df_conversion # TODO: FIXME:
+@bridge.df_conversion
 def epicalc_profile(data: Tuple[list, pd.DataFrame], **kwargs):
     return bridge.iglu_r.epicalc_profile(data, **kwargs)
 

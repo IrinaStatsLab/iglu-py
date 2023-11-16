@@ -13,7 +13,6 @@ from .metrics import (
     all_metrics,
     auc,
     below_percent,
-    calculate_sleep_wake,
     cogi,
     conga,
     cv_glu,

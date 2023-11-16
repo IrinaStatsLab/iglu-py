@@ -11,10 +11,10 @@ from rpy2.robjects import pandas2ri
 # global instance of r-version of iglu
 iglu_r = None
 
-def import_iglu(filepath: str = None) -> None:
+def import_iglu(install_name: str = 'iglu_3.5.0.tar.gz') -> None:
     ''' Attempts to load `iglu` already installed on machine.
 
-        If it can't find it, it uses `install_iglu`. See that function for more specific instructions.
+        If it can't find it, it passes `install_iglu` the specified `install_name` argument. See that function for more specific instructions.
     '''
     global iglu_r
 
@@ -22,33 +22,42 @@ def import_iglu(filepath: str = None) -> None:
         iglu_r = importr('iglu')
 
     except:
-        install_iglu(filepath)
+        install_iglu(install_name)
         iglu_r = importr('iglu')
 
-def install_iglu(filepath: str = None) -> None:
+def install_iglu(name: str = 'iglu_3.5.0.tar.gz', name_type='relative') -> None:
     ''' Install the `iglu` R package from a tar.gz file on your machine.
 
-        `filepath` is either of the options below:
-        1. "iglu" to download latest version from CRAN
-        2. None: uses the tar.gz file specified by `.env`, which comes bundled with `iglu-py`. (Note: this file resides in the same directory as the `.env` file itself)
-        3. Absolute file path to the tar.gz iglu source file on your machine
+        (`name`, `name_type`) combinations are either of the options below
+        1. ('iglu', 'CRAN'): to download latest version from CRAN
+        2. ('iglu_3.5.0.tar.gz', 'relative'): uses the tar.gz file specified, relative to the package working directory. (Note: specified version comes bundled with iglu-py)
+        3. (path/to/file, 'absolute'): Absolute file path to the tar.gz iglu source file on your machine
 
         Remember to call "import_iglu()" after "install_iglu()" if you want to use it.
     '''
 
+    if name_type not in ['CRAN', 'relative', 'absolute']:
+        raise ValueError(f'name_type should be one of "CRAN", "relative", or "absolute". Got: {name_type}')
+    
     print('Attempting to install iglu-r now (~20 seconds).')
     
     try:
-        if filepath == None:
-            # get file path
-            load_dotenv()
-
-            parent_directory = Path(__file__).parents[1].absolute()
-            filepath = os.path.join(parent_directory, os.getenv("IGLU_FILE_NAME"))
-
-        # install package
         utils = importr('utils')
-        utils.install_packages(filepath, type = "source")
+
+        if name_type == 'CRAN':
+            utils.install_packages(name)
+        
+        if name_type == 'relative':
+            # get file path
+            parent_directory = Path(__file__).parent.absolute()
+            filepath = os.path.join(parent_directory, name)
+
+            print(parent_directory, Path(__file__), filepath)
+
+            utils.install_packages(filepath, type = 'source')
+
+        if name_type == 'absolute':
+            utils.install_packages(name, type = 'source')
 
         print('R-version of iglu successfully installed. You are free to proceed.\n\n')
     

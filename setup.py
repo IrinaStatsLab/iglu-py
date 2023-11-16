@@ -13,4 +13,5 @@ setup(
         packages=find_packages(),
         install_requires=['rpy2==3.5.13', 'pandas==2.1.2', 'python-dotenv==1.0.0'], # we've validated functionality with these package versions.     
         keywords=['iglu', 'Continuous Glucose Monitoring analysis software', 'diabetes'],
+        include_package_data=True
 )
