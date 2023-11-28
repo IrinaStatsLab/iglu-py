@@ -1,33 +1,40 @@
 ### How to add a new metric?
+See external readme section "### Changing iglu-r Version"
 
 ### How to update a metric's parameters?
+See external readme section "### Changing iglu-r Version"
+
+TLDR:
+* Add required/non-default parameters to the function definition
+* Do NOT add optional/default parameters. Instead use [`**kwargs`](https://www.freecodecamp.org/news/args-and-kwargs-in-python/)
+    * Why? We don't want to override the defaults in R but want to take in/pass named arguments if the user wants to override the input.
 
 ### How to update the version of iglu?
-See external readme
+See external readme section "### Changing iglu-r Version" for background.
 
-### Installation
+The only difference is you'd do this:
+1. Replace `iglu_r/iglu_X.X.X.tar.gz` w/ the new tar file
+2. Update the new file name in the following places:  
+    * `iglu_r/bridge/import_iglu()`
+    * `iglu_r/bridge/install_iglu()`
+    * `readme.md`
+
+You can test if it's working by running the following in Python.
 
 ```
-# 1. download miniconda to create a virtual environment (https://docs.conda.io/projects/miniconda/en/latest/)
-mkdir -p ~/miniconda3
-curl https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-arm64.sh -o ~/miniconda3/miniconda.sh
-bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
-rm -rf ~/miniconda3/miniconda.sh
-~/miniconda3/bin/conda init bash
-~/miniconda3/bin/conda init zsh
+import iglu_r
 
-# 2. Create virtual environment & install the package locally
-conda create -n iglu-py python=3.10
-cd path/to/folder/with/setup.py/file
-pip install .
+iglu_r.uninstall_iglu()
 
-# 3. Run data > example.ipynb
+iglu_r.install_iglu() # will use the default arguments specifed in the function definition
 ```
 
 ### Notes
-testbench does NOT test for accuracy. Testbench only ensures the output of R & Python functions are identical. Accuracy should be ascertained in the R package iglu b/c it's the "source of truth".
+1. To compile locally, run the following in the package root directory.
+```
+rm -rf build
+rm -rf *.egg-info
+pip install .
+```
 
-We expose the underlying iglu package via: `iglu.igl`. However, we provide helper f(x) in python which allows for easier documentation and usability. The cons is maintainability: each iglu version a handful of python functions may need to be updated.
-
-
-3. **Upload `tgz` file to the "iglu" directory:** Upload the file to the same directory as this readme.md file. Note, the absolute path to this directory will differ depending on where your computer stores Python packages.
+2. The tests (TODO) should NOT test for accuracy. The testbench only ensures the output of R iglu functions & corresponding Python iglu-r functions are identical. Accuracy should be ascertained in the R package iglu because it's the "source of truth"
