@@ -66,7 +66,8 @@ from .metrics import (
 from .df import (
     example_data_1_subject,
     example_data_5_subject,
-    example_meal
+    example_meals_hall,
+    example_data_hall
 )
 
 import_iglu()

@@ -124,7 +124,6 @@ See the table below to understand what is accessible in iglu Python vs. iglu R.
 | All Plots       |                                          ❌                                           |                                            ✅                                            |         |
 | Example Data    | iglu.example_data_X_subject<br />iglu.example_meals_hall<br />iglu.example_data_hall | iglu::example_data_X_subject<br />iglu::example_meals_hall<br />iglu::example_data_hall |  X=1,5  |
 
-
 | Metrics                           |           Python           |              R               | Comment |
 |-----------------------------------|:--------------------------:|:----------------------------:|:-------:|
 | CGMS2DayByDay                     |             ❌              |    iglu::CGMS2DayByDay()     |         |
