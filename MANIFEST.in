@@ -1,4 +1,5 @@
 include iglu_r/data/example_data_1_subject.csv
 include iglu_r/data/example_data_5_subject.csv
-include iglu_r/data/example_meal.csv
+include iglu_r/data/example_meals_hall.csv
+include iglu_r/data/example_data_hall.csv
 include iglu_r/iglu_3.5.0.tar.gz
