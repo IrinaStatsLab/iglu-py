@@ -13,7 +13,7 @@ Please cite **both** _iglu-r_ and the original _iglu_ package.
 ## Getting Started
 ### Installation
 ```
-pip install iglu-r
+$ pip install iglu-r
 ```
 
 This will automatically install all the necessary Python dependencies for you.
