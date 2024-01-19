@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-VERSION = '0.0.9'
+VERSION = '0.1.0'
 DESCRIPTION = 'Python wrapper of R package `iglu` for continuous glucose monitoring data analysis. Wraps the R functions, thus making them accessible in Python.'
 
 # read the contents of your README file
@@ -10,10 +10,10 @@ long_description = (this_directory / "README.md").read_text()
 
 # Setting up
 setup(
-        name='iglu-r', # name must match the folder name where code lives
+        name='iglu-py', # name must match the folder name where code lives
         version=VERSION,
-        author='Lizzie Chun, Nathaniel J. Fernandes, Irina Gaynanova',
-        author_email='lizzie_chun1@tamu.edu, njfernandes24@tamu.edu, irinagn@umich.edu', 
+        author='Nathaniel J. Fernandes, Lizzie Chun, Irina Gaynanova',
+        author_email='njfernandes24@tamu.edu, lizzie_chun1@tamu.edu, irinagn@umich.edu', 
         description=DESCRIPTION,
         long_description=long_description,
         long_description_content_type='text/markdown',
