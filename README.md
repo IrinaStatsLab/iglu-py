@@ -1,5 +1,5 @@
 ## Purpose
-We are releasing a Python wrapper (_[iglu-py](https://pypi.org/project/iglu-pyy/)_) for the R package "iglu" (_[iglu-r](https://irinagain.github.io/iglu/)_), since a large number of developers and diabetes researchers program primarily in Python. We hope this abstraction makes development with iglu even easier and more user-friendly.
+We are releasing a Python wrapper (_[iglu-py](https://pypi.org/project/iglu-py/)_) for the R package "iglu" (_[iglu-r](https://irinagain.github.io/iglu/)_), since a large number of developers and diabetes researchers program primarily in Python. We hope this abstraction makes development with iglu even easier and more user-friendly.
 
 Note that _iglu-r_ is the "source of truth" and all _iglu-py_ functions simply call the corresponding _iglu-r_ function internally. In other words, **there is no new functionality in iglu-py that is not iglu-r** (see [Functionality](#functionality) below for more details).
 
