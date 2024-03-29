@@ -36,5 +36,6 @@ rm -rf build
 rm -rf *.egg-info
 pip install .
 ```
+2. To automatically deploy on PyPi, create a new release on GitHub. This will automatically deploy the package to PyPi.
 
 2. TODO: The tests should NOT test for accuracy. The testbench only ensures the output of _iglu-r_ functions & corresponding _iglu-py_ functions are identical. Accuracy should be ascertained in the R package version of iglu because it's the "source of truth".
