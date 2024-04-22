@@ -15,8 +15,7 @@ See external readme section '### Changing the Version of "iglu-r" Used by "iglu-
 The only difference is you'd do this:
 1. Replace `iglu_py/iglu_X.X.X.tar.gz` with the new tar file
 2. Update the new file name in the following places:  
-    * `iglu_py/bridge/import_iglu()`
-    * `iglu_py/bridge/install_iglu()`
+    * `iglu_py/bridge/IGLU_TGZ_NAME`
     * `readme.md`
 
 You can test if it's working by running the following in Python.
