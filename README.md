@@ -11,6 +11,13 @@ Please cite **both** _iglu-py_ and the original _iglu-r_ package.
 > Broll S, Buchanan D, Chun E, Muschelli J, Fernandes N, Seo J, Shih J, Urbanek J, Schwenck J, Gaynanova I (2021). iglu: Interpreting Glucose Data from Continuous Glucose Monitors. R package version X.X.X.
 
 ## Getting Started
+### System Requirements
+Please ensure the following requirements are met for _iglu-py_ to work properly.
+
+* Python >= 3.8.0
+* rpy2 >= 3.5.13
+* pandas >= 2.0.0
+
 ### Installation
 ```
 $ pip install iglu-py

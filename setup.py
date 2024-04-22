@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-VERSION = "1.0.0"
+VERSION = "1.0.1"
 DESCRIPTION = "Python wrapper of R package `iglu` for continuous glucose monitoring data analysis. Wraps the R functions, thus making them accessible in Python."
 
 # read the contents of your README file
@@ -21,8 +21,9 @@ setup(
     packages=find_packages(),
     install_requires=[
         "rpy2>=3.5.13",
-        "pandas>=2.1.2",
+        "pandas>=2.0.0",
     ],  # we've validated functionality with these package versions.
+    python_requires=">=3.8.0",
     keywords=["iglu", "Continuous Glucose Monitoring analysis software", "diabetes"],
     include_package_data=True,
 )
