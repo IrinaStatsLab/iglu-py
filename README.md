@@ -29,7 +29,7 @@ There is *no need* to download R, _iglu-r_, or any other CRAN package directly. 
 
 > ⚠️ If you already have _iglu-r_ installed on your machine, _iglu-py_ will use that version of _iglu-r_ internally instead of the bundled version.  
 >
-> See [Changing the Version of "iglu-r" Used by "iglu-py"](#changing-the-version-of-iglu-r-used-by-iglu-py) below to change to your desired version.
+> See [Changing the Version of "iglu-r" Used by "iglu-py"](#changing-iglu-r-version) below to change to your desired version.
 
 ### How to Use
 ```
@@ -74,7 +74,7 @@ When reading the aforementioned _iglu-r_ documentation & coding in Python, **alw
 |    int\|float    |  numeric   |
 |       list       |   vector   |
 
-### Changing the Version of "iglu-r" Used by "iglu-py"
+<h3 id="changing-iglu-r-version">Changing the Version of "iglu-r" Used by "iglu-py"</h3>
 By default, the R-version [iglu v4.0.0](https://github.com/irinagain/iglu/blob/master/NEWS.md) comes embedded in iglu-py. However, you can change this version if you desire.
 
 Follow these simple steps below.
