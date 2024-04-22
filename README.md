@@ -137,18 +137,18 @@ See the tables below to understand what is accessible in _iglu-py_ vs. _iglu-r_.
 | Above %                           |    iglu.above_percent()    |    iglu::above_percent()     |         |
 | Active %                          |   iglu.active_percent()    |    iglu::active_percent()    |         |
 | ADRR                              |        iglu.adrr()         |         iglu::adrr()         |         |
-| AGP                               |         iglu.agp()         |         iglu::agp()          |         |
+| AGP                               |         ❌         |         iglu::agp()          |    Is a plot     |
 | AGP Metrics                       |     iglu.agp_metrics()     |     iglu::agp_metrics()      |         |
 | All Metrics                       |     iglu.all_metrics()     |      iglu::all_metrics       |         |
 | AUC                               |         iglu.auc()         |         iglu::auc()          |         |
 | Below %                           |    iglu.below_percent()    |    iglu::below_percent()     |         |
-| Calculate Sleep Wake              |             ❌              | iglu::calculate_sleep_wake() |         |
+| Calculate Sleep Wake              |             ❌              | iglu::calculate_sleep_wake() |   Is a plot      |
 | COGI                              |        iglu.cogi()         |         iglu::cogi()         |         |
 | CONGA                             |        iglu.conga()        |        iglu::conga()         |         |
 | Coefficient of Variation (CV)     |       iglu.cv_glu()        |        iglu::cv_glu()        |         |
 | Coefficient of Variation subtypes |     iglu.cv_measures()     |     iglu::cv_measures()      |         |
 | eA1C                              |        iglu.ea1c()         |         iglu::ea1c()         |         |
-| Episode Calculation Profile       |   iglu.epicalc_profile()   |   iglu::epicalc_profile()    |         |
+| Episode Calculation Profile       |   ❌   |   iglu::epicalc_profile()    |    Is a plot     |
 | Episode Calculation               | iglu.episode_calculation() | iglu::episode_calculation()  |         |
 | GMI                               |         iglu.gmi()         |         iglu::gmi()          |         |
 | GRADE                             |        iglu.grade()        |        iglu::grade()         |         |
@@ -169,12 +169,12 @@ See the tables below to understand what is accessible in _iglu-py_ vs. _iglu-r_.
 | MAD                               |       iglu.mad_glu()       |       iglu::mad_glu()        |         |
 | MAG                               |         iglu.mag()         |         iglu::mag()          |         |
 | MAGE                              |        iglu.mage()         |         iglu::mage()         |         |
-| Meal Metrics                      |          iglu.()           |     iglu::meal_metrics()     |         |
+| Meal Metrics                      |          ❌           |     iglu::meal_metrics()     |         |
 | Mean                              |      iglu.mean_glu()       |       iglu::mean_glu()       |         |
 | Median                            |     iglu.median_glu()      |      iglu::median_glu()      |         |
 | Metrics Heatmap                   |             ❌              |   iglu::metrics_heatmap()    |         |
 | MODD                              |        iglu.modd()         |         iglu::modd()         |         |
-| PGS                               |             ❌              |         iglu::pgs()          |         |
+| PGS                               |             iglu.pgs()              |         iglu::pgs()          |         |
 | Process Data                      |    iglu.process_data()     |     iglu::process_data()     |         |
 | Quantile                          |    iglu.quantile_glu()     |     iglu::quantile_glu()     |         |
 | Range                             |      iglu.range_glu()      |      iglu::range_glu()       |         |
