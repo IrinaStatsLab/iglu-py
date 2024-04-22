@@ -45,11 +45,35 @@ def install_iglu(name: str = IGLU_TGZ_NAME, name_type="relative") -> None:
 
     print("Attempting to install iglu-r now (~20 seconds).")
 
+    dependencies = [
+        "caTools",
+        "dplyr",
+        "DT",
+        "ggplot2",
+        "ggpubr",
+        "gridExtra",
+        "hms",
+        "lubridate",
+        "magrittr",
+        "patchwork",
+        "pheatmap",
+        "scales",
+        "shiny",
+        "tibble",
+        "tidyr",
+        "zoo",
+        "gtable",
+        "plotly",
+    ]
+
     try:
         utils = importr("utils")
 
+        for dependency in dependencies:
+            utils.install_packages(dependency, repos="https://cloud.r-project.org/")
+
         if name_type == "CRAN":
-            utils.install_packages(name)
+            utils.install_packages(name, repos="https://cloud.r-project.org/")
 
         if name_type == "relative":
             # get file path
