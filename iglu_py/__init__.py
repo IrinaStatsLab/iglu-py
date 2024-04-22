@@ -5,7 +5,6 @@ from .metrics import (
     active_percent,
     adrr,
     agp_metrics,
-    # agp,
     all_metrics,
     auc,
     below_percent,
@@ -24,7 +23,6 @@ from .metrics import (
     gri,
     gvp,
     hbgi,
-    hist_roc,  # TODO: add to readme
     hyper_index,
     hypo_index,
     igc,
@@ -37,8 +35,8 @@ from .metrics import (
     mad_glu,
     mag,
     mage,
-    time_check,  # TODO: add to readme
-    adj_mtimes,  # TODO: add to readme
+    # time_check,  # TODO: either implement or delete
+    # adj_mtimes,  # TODO: either implement or delete
     mean_glu,
     median_glu,
     metric_scatter,

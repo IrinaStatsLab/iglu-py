@@ -131,59 +131,60 @@ See the tables below to understand what is accessible in _iglu-py_ vs. _iglu-r_.
 | All Plots       |                                          ❌                                           |                                            ✅                                            |         |
 | Example Data    | iglu.example_data_X_subject<br />iglu.example_meals_hall<br />iglu.example_data_hall | iglu::example_data_X_subject<br />iglu::example_meals_hall<br />iglu::example_data_hall |  X=1,5  |
 
-| Metrics                           |           Python           |              R               | Comment |
-|-----------------------------------|:--------------------------:|:----------------------------:|:-------:|
-| CGMS2DayByDay                     |             ❌              |    iglu::CGMS2DayByDay()     |         |
-| Above %                           |    iglu.above_percent()    |    iglu::above_percent()     |         |
-| Active %                          |   iglu.active_percent()    |    iglu::active_percent()    |         |
-| ADRR                              |        iglu.adrr()         |         iglu::adrr()         |         |
-| AGP                               |         ❌         |         iglu::agp()          |    Is a plot     |
-| AGP Metrics                       |     iglu.agp_metrics()     |     iglu::agp_metrics()      |         |
-| All Metrics                       |     iglu.all_metrics()     |      iglu::all_metrics       |         |
-| AUC                               |         iglu.auc()         |         iglu::auc()          |         |
-| Below %                           |    iglu.below_percent()    |    iglu::below_percent()     |         |
-| Calculate Sleep Wake              |             ❌              | iglu::calculate_sleep_wake() |   Is a plot      |
-| COGI                              |        iglu.cogi()         |         iglu::cogi()         |         |
-| CONGA                             |        iglu.conga()        |        iglu::conga()         |         |
-| Coefficient of Variation (CV)     |       iglu.cv_glu()        |        iglu::cv_glu()        |         |
-| Coefficient of Variation subtypes |     iglu.cv_measures()     |     iglu::cv_measures()      |         |
-| eA1C                              |        iglu.ea1c()         |         iglu::ea1c()         |         |
-| Episode Calculation Profile       |   ❌   |   iglu::epicalc_profile()    |    Is a plot     |
-| Episode Calculation               | iglu.episode_calculation() | iglu::episode_calculation()  |         |
-| GMI                               |         iglu.gmi()         |         iglu::gmi()          |         |
-| GRADE                             |        iglu.grade()        |        iglu::grade()         |         |
-| Grade Eugly                       |     iglu.grade_eugly()     |     iglu::grade_eugly()      |         |
-| Grade Hyper                       |     iglu.grade_hyper()     |     iglu::grade_hyper()      |         |
-| Grade Hypo                        |     iglu.grade_hypo()      |      iglu::grade_hypo()      |         |
-| GRI                               |         iglu.gri()         |         iglu::gri()          |         |
-| GVP                               |         iglu.gvp()         |         iglu::gvp()          |         |
-| HBGI                              |        iglu.hbgi()         |         iglu::hbgi()         |         |
-| Hyperglucemia Index               |     iglu.hyper_index()     |     iglu::hyper_index()      |         |
-| Hypoglycemia Index                |     iglu.hypo_index()      |      iglu::hypo_index()      |         |
-| Index of Glycemic Control         |         iglu.igc()         |         iglu::igc()          |         |
-| % in target range                 |  iglu.in_range_percent()   |   iglu::in_range_percent()   |         |
-| IQR                               |       iglu.iqr_glu()       |       iglu::iqr_glu()        |         |
-| J-Index                           |       iglu.j_index()       |       iglu::j_index()        |         |
-| LBGI                              |        iglu.lbgi()         |         iglu::lbgi()         |         |
-| M-Value                           |       iglu.m_value()       |       iglu::m_value()        |         |
-| MAD                               |       iglu.mad_glu()       |       iglu::mad_glu()        |         |
-| MAG                               |         iglu.mag()         |         iglu::mag()          |         |
-| MAGE                              |        iglu.mage()         |         iglu::mage()         |         |
-| Meal Metrics                      |          ❌           |     iglu::meal_metrics()     |         |
-| Mean                              |      iglu.mean_glu()       |       iglu::mean_glu()       |         |
-| Median                            |     iglu.median_glu()      |      iglu::median_glu()      |         |
-| Metrics Heatmap                   |             ❌              |   iglu::metrics_heatmap()    |         |
-| MODD                              |        iglu.modd()         |         iglu::modd()         |         |
-| PGS                               |             iglu.pgs()              |         iglu::pgs()          |         |
-| Process Data                      |    iglu.process_data()     |     iglu::process_data()     |         |
-| Quantile                          |    iglu.quantile_glu()     |     iglu::quantile_glu()     |         |
-| Range                             |      iglu.range_glu()      |      iglu::range_glu()       |         |
-| Read Raw Data                     |    iglu.read_raw_data()    |    iglu::read_raw_data()     |         |
-| ROC                               |         iglu.roc()         |         iglu::roc()          |         |
-| SD                                |       iglu.sd_glu()        |        iglu::sd_glu()        |         |
-| SD  Measures                      |     iglu.sd_measures()     |     iglu::sd_measures()      |         |
-| SD  ROC                           |       iglu.sd_roc()        |        iglu::sd_glu()        |         |
-| Summary                           |     iglu.summary_glu()     |     iglu::summary_glu()      |         |
+| Metrics                           |           Python           |              R               |  Comment  |
+|-----------------------------------|:--------------------------:|:----------------------------:|:---------:|
+| CGMS2DayByDay                     |             ❌              |    iglu::CGMS2DayByDay()     |           |
+| Above %                           |    iglu.above_percent()    |    iglu::above_percent()     |           |
+| Active %                          |   iglu.active_percent()    |    iglu::active_percent()    |           |
+| ADRR                              |        iglu.adrr()         |         iglu::adrr()         |           |
+| AGP                               |             ❌              |         iglu::agp()          | Is a plot |
+| AGP Metrics                       |     iglu.agp_metrics()     |     iglu::agp_metrics()      |           |
+| All Metrics                       |     iglu.all_metrics()     |      iglu::all_metrics       |           |
+| AUC                               |         iglu.auc()         |         iglu::auc()          |           |
+| Below %                           |    iglu.below_percent()    |    iglu::below_percent()     |           |
+| Calculate Sleep Wake              |             ❌              | iglu::calculate_sleep_wake() | Is a plot |
+| COGI                              |        iglu.cogi()         |         iglu::cogi()         |           |
+| CONGA                             |        iglu.conga()        |        iglu::conga()         |           |
+| Coefficient of Variation (CV)     |       iglu.cv_glu()        |        iglu::cv_glu()        |           |
+| Coefficient of Variation subtypes |     iglu.cv_measures()     |     iglu::cv_measures()      |           |
+| eA1C                              |        iglu.ea1c()         |         iglu::ea1c()         |           |
+| Episode Calculation Profile       |             ❌              |   iglu::epicalc_profile()    | Is a plot |
+| Episode Calculation               | iglu.episode_calculation() | iglu::episode_calculation()  |           |
+| GMI                               |         iglu.gmi()         |         iglu::gmi()          |           |
+| GRADE                             |        iglu.grade()        |        iglu::grade()         |           |
+| Grade Eugly                       |     iglu.grade_eugly()     |     iglu::grade_eugly()      |           |
+| Grade Hyper                       |     iglu.grade_hyper()     |     iglu::grade_hyper()      |           |
+| Grade Hypo                        |     iglu.grade_hypo()      |      iglu::grade_hypo()      |           |
+| GRI                               |         iglu.gri()         |         iglu::gri()          |           |
+| GVP                               |         iglu.gvp()         |         iglu::gvp()          |           |
+| HBGI                              |        iglu.hbgi()         |         iglu::hbgi()         |           |
+| Hist_roc                              |        ❌         |         iglu::hist_roc()         |     Is a plot      |
+| Hyperglucemia Index               |     iglu.hyper_index()     |     iglu::hyper_index()      |           |
+| Hypoglycemia Index                |     iglu.hypo_index()      |      iglu::hypo_index()      |           |
+| Index of Glycemic Control         |         iglu.igc()         |         iglu::igc()          |           |
+| % in target range                 |  iglu.in_range_percent()   |   iglu::in_range_percent()   |           |
+| IQR                               |       iglu.iqr_glu()       |       iglu::iqr_glu()        |           |
+| J-Index                           |       iglu.j_index()       |       iglu::j_index()        |           |
+| LBGI                              |        iglu.lbgi()         |         iglu::lbgi()         |           |
+| M-Value                           |       iglu.m_value()       |       iglu::m_value()        |           |
+| MAD                               |       iglu.mad_glu()       |       iglu::mad_glu()        |           |
+| MAG                               |         iglu.mag()         |         iglu::mag()          |           |
+| MAGE                              |        iglu.mage()         |         iglu::mage()         |           |
+| Meal Metrics                      |             ❌              |     iglu::meal_metrics()     |           |
+| Mean                              |      iglu.mean_glu()       |       iglu::mean_glu()       |           |
+| Median                            |     iglu.median_glu()      |      iglu::median_glu()      |           |
+| Metrics Heatmap                   |             ❌              |   iglu::metrics_heatmap()    |           |
+| MODD                              |        iglu.modd()         |         iglu::modd()         |           |
+| PGS                               |         iglu.pgs()         |         iglu::pgs()          |           |
+| Process Data                      |    iglu.process_data()     |     iglu::process_data()     |           |
+| Quantile                          |    iglu.quantile_glu()     |     iglu::quantile_glu()     |           |
+| Range                             |      iglu.range_glu()      |      iglu::range_glu()       |           |
+| Read Raw Data                     |    iglu.read_raw_data()    |    iglu::read_raw_data()     |           |
+| ROC                               |         iglu.roc()         |         iglu::roc()          |           |
+| SD                                |       iglu.sd_glu()        |        iglu::sd_glu()        |           |
+| SD  Measures                      |     iglu.sd_measures()     |     iglu::sd_measures()      |           |
+| SD  ROC                           |       iglu.sd_roc()        |        iglu::sd_glu()        |           |
+| Summary                           |     iglu.summary_glu()     |     iglu::summary_glu()      |           |
 
 ## License Agreements
 1. By using this package, you agree to the license agreement of the [R version of iglu](https://irinagain.github.io/iglu/), which is GPL-2.
