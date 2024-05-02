@@ -133,7 +133,7 @@ See the tables below to understand what is accessible in _iglu-py_ vs. _iglu-r_.
 
 | Metrics                           |           Python           |              R               |  Comment  |
 |-----------------------------------|:--------------------------:|:----------------------------:|:---------:|
-| CGMS2DayByDay                     |             ❌              |    iglu::CGMS2DayByDay()     |           |
+| CGMS2DayByDay                     |    iglu.CGMS2DayByDay()    |    iglu::CGMS2DayByDay()     |           |
 | Above %                           |    iglu.above_percent()    |    iglu::above_percent()     |           |
 | Active %                          |   iglu.active_percent()    |    iglu::active_percent()    |           |
 | ADRR                              |        iglu.adrr()         |         iglu::adrr()         |           |
@@ -158,7 +158,7 @@ See the tables below to understand what is accessible in _iglu-py_ vs. _iglu-r_.
 | GRI                               |         iglu.gri()         |         iglu::gri()          |           |
 | GVP                               |         iglu.gvp()         |         iglu::gvp()          |           |
 | HBGI                              |        iglu.hbgi()         |         iglu::hbgi()         |           |
-| Hist_roc                              |        ❌         |         iglu::hist_roc()         |     Is a plot      |
+| Hist_roc                          |             ❌              |       iglu::hist_roc()       | Is a plot |
 | Hyperglucemia Index               |     iglu.hyper_index()     |     iglu::hyper_index()      |           |
 | Hypoglycemia Index                |     iglu.hypo_index()      |      iglu::hypo_index()      |           |
 | Index of Glycemic Control         |         iglu.igc()         |         iglu::igc()          |           |

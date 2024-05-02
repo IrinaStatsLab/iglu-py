@@ -48,6 +48,19 @@ def below_percent(data: Tuple[list, pd.DataFrame], **kwargs):
 # def calculate_sleep_wake(data: Tuple[list, pd.DataFrame], func, **kwargs):
 #     return bridge.iglu_r.calculate_sleep_wake(data, func, **kwargs)
 
+@bridge.df_conversion
+def CGMS2DayByDay(data: pd.DataFrame, **kwargs):
+    ''' Linearly interpolates the glucose data & splits it into 24-hour periods
+    
+    Returns a dictionary with 3 keys:
+        - dt0: a float that is the (1 / sampling_frequency). For exampke, if sampling_frequency = 1 / 5 min, dt0 = 5 min
+        - gd2d: N x (1440 min / dt0) numpy array. Each row represents a day w/ the linearly interpolated glucose values at [0 (midnight), dt0, 2*dt0, ..., 1440 min].
+        - actual_dates: list of length N, with each date as a PD Date TimeStamp at at midnight (00:00:00)
+    '''
+    result = dict(bridge.iglu_r.CGMS2DayByDay(data, **kwargs))
+    result['actual_dates'] = [pd.to_datetime(d, unit='D', origin='1970-01-01') for d in result['actual_dates']]
+    result = result['dt0'][0]
+    return result
 
 @bridge.df_conversion
 def cogi(data: Tuple[list, pd.DataFrame], **kwargs):

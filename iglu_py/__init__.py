@@ -8,6 +8,7 @@ from .metrics import (
     all_metrics,
     auc,
     below_percent,
+    CGMS2DayByDay,
     cogi,
     conga,
     cv_glu,

@@ -70,10 +70,14 @@ def install_iglu(name: str = IGLU_TGZ_NAME, name_type="relative") -> None:
         utils = importr("utils")
 
         for dependency in dependencies:
-            utils.install_packages(dependency, repos="https://cloud.r-project.org/")
+            utils.install_packages(
+                dependency, method="wget", repos="https://cloud.r-project.org/"
+            )
 
         if name_type == "CRAN":
-            utils.install_packages(name, repos="https://cloud.r-project.org/")
+            utils.install_packages(
+                name, method="wget", repos="https://cloud.r-project.org/"
+            )
 
         if name_type == "relative":
             # get file path
