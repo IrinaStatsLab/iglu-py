@@ -49,17 +49,34 @@ def below_percent(data: Tuple[list, pd.DataFrame], **kwargs):
 #     return bridge.iglu_r.calculate_sleep_wake(data, func, **kwargs)
 
 @bridge.df_conversion
-def CGMS2DayByDay(data: pd.DataFrame, **kwargs):
+def CGMS2DayByDay(data: pd.DataFrame, return_df = False, **kwargs):
     ''' Linearly interpolates the glucose data & splits it into 24-hour periods
     
-    Returns a dictionary with 3 keys:
+    If `return_df = False`, returns a dictionary with 3 keys:
         - dt0: a float that is the (1 / sampling_frequency). For exampke, if sampling_frequency = 1 / 5 min, dt0 = 5 min
         - gd2d: N x (1440 min / dt0) numpy array. Each row represents a day w/ the linearly interpolated glucose values at [0 (midnight), dt0, 2*dt0, ..., 1440 min].
         - actual_dates: list of length N, with each date as a PD Date TimeStamp at at midnight (00:00:00)
+        
+    If `return_df = True`, then formats the above data into a pd dataframe with 3 columns: (id, time, gl)
+        - NOTE: there may be some rows with gl value of "nan"
     '''
+    if len(set(data['id'].tolist())) != 1:
+        raise ValueError("Multiple subjects detected. This function only supports linear interpolation on 1 subject at a time. Please filter the input dataframe to only have 1 subject's data")
+               
     result = dict(bridge.iglu_r.CGMS2DayByDay(data, **kwargs))
     result['actual_dates'] = [pd.to_datetime(d, unit='D', origin='1970-01-01') for d in result['actual_dates']]
-    result = result['dt0'][0]
+    result['dt0'] = result['dt0'][0]
+    
+    if return_df:
+        df = pd.DataFrame({'id': [], 'time': [], 'gl': []})
+        for day in range(result['gd2d'].shape[0]):
+            gl = result['gd2d'][day, :].tolist()
+            n = len(gl)
+            time = [pd.Timedelta(i*result['dt0'], unit='m') + result['actual_dates'][day] for i in range(n)]
+            
+            df = pd.concat([df, pd.DataFrame({'id': n*[data['id'].iat[0]], 'time': time, 'gl': gl})])
+        
+        return df
     return result
 
 @bridge.df_conversion
