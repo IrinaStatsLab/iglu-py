@@ -9,7 +9,7 @@ from rpy2.robjects import pandas2ri
 
 # global instance of r-version of iglu
 iglu_r = None
-IGLU_TGZ_NAME = "iglu_4.0.0.tar.gz"
+IGLU_TGZ_NAME = "iglu_4.1.7.tar.gz"
 
 
 def import_iglu(install_name: str = IGLU_TGZ_NAME) -> None:
