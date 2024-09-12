@@ -140,8 +140,8 @@ def grade(data: Tuple[list, pd.DataFrame]):
 
 
 @bridge.df_conversion
-def gri(data: Tuple[list, pd.DataFrame]):
-    return bridge.iglu_r.gri(data)
+def gri(data: Tuple[list, pd.DataFrame], **kwargs):
+    return bridge.iglu_r.gri(data, **kwargs)
 
 
 @bridge.df_conversion
@@ -248,15 +248,9 @@ def metric_scatter(data: Tuple[list, pd.DataFrame], **kwargs):
 def modd(data: Tuple[list, pd.DataFrame], **kwargs):
     return bridge.iglu_r.modd(data, **kwargs)
 
-
-# @bridge.df_conversion
-# def meal_metrics_single(data: Tuple[list, pd.DataFrame], **kwargs):
-#     return bridge.iglu_r.meal_metrics_single(data, **kwargs)
-
-
-# @bridge.df_conversion
-# def meal_metrics(data: Tuple[list, pd.DataFrame], **kwargs):
-#     return bridge.iglu_r.meal_metrics(data, **kwargs)
+# @bridge.df_conversion # TODO:
+# def meal_metrics(data, mealtimes, **kwargs):
+#     return bridge.iglu_r.meal_metrics(data, mealtimes, **kwargs)
 
 
 @bridge.df_conversion
@@ -281,7 +275,7 @@ def quantile_glu(data: Tuple[list, pd.DataFrame], **kwargs):
 
 @bridge.df_conversion
 def range_glu(data: Tuple[list, pd.DataFrame]):
-    return range_glu(data)
+    return bridge.iglu_r.range_glu(data)
 
 
 def read_raw_data(filename: str, **kwargs):

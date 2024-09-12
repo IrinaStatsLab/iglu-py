@@ -42,7 +42,6 @@ from .metrics import (
     median_glu,
     metric_scatter,
     modd,
-    # meal_metrics_single,
     # meal_metrics,
     optimized_iglu_functions,
     pgs,
