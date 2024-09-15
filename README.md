@@ -6,7 +6,7 @@ Note that _iglu-r_ is the "source of truth" and all _iglu-py_ functions simply c
 ## Citation
 Please cite **both** _iglu-py_ and the original _iglu-r_ package.
 
-> Fernandes NJ, Chun E, Gaynanova I (2023). iglu-py: Interpreting Glucose Data from Continuous Glucose Monitors. Python package version X.X.X.
+> Chun E, Fernandes NJ, & Gaynanova I (2024). An Update on the iglu Software Package for Interpreting Continuous Glucose Monitoring Data. Diabetes Technology & Therapeutics. Python package version X.X.X.
 
 > Broll S, Buchanan D, Chun E, Muschelli J, Fernandes N, Seo J, Shih J, Urbanek J, Schwenck J, Gaynanova I (2021). iglu: Interpreting Glucose Data from Continuous Glucose Monitors. R package version X.X.X.
 
