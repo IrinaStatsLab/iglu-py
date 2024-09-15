@@ -277,7 +277,7 @@ def quantile_glu(data: Tuple[list, pd.DataFrame], **kwargs):
 def range_glu(data: Tuple[list, pd.DataFrame]):
     return bridge.iglu_r.range_glu(data)
 
-
+@bridge.df_conversion
 def read_raw_data(filename: str, **kwargs):
     return bridge.iglu_r.read_raw_data(filename, **kwargs)
 
